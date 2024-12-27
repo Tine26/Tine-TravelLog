@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo">Tine's TravelLog</div>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+    <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+</header>
+<body>
+    
+    <div class="container">
+        <h1>Featured Travel Destinations</h1>
+    
+        <div class="featured-destinations">
+          <div class="destination">
+            <img src="Palawan.jpg" alt="Destination 1">
+            <div class="destination-content">
+              <h3>Shimizu Island, El Nido</h3>
+              <p class="short-desc">Shimizu Island is one of the numerous islands dotting El Nido's Bacuit Bay.</p>
+                <p class="full-desc" style="display: none;">This small island has become a popular spot for snorkeling because of its colorful marine life. It's usually part of the El Nido island-hopping Tour A package and an alternative stopover spot for lunch.</p>
+              <a href="#" class="read-more">Read More</a> 
+            </div>
+          </div>
+    
+          <div class="destination">
+            <img src="mayon.jpg" alt="Destination 2">
+            <div class="destination-content">
+              <h3>Mayon Volcano, Albay</h3>
+              <p class="short-desc">Standing tall with its perfect cone shape, Mayon Volcano is one of the most breathtaking volcanoes in the Philippines and an iconic natural landmark.</p>
+                <p class="full-desc" style="display: none;">The name "Mayon," derived from the Bicolano word "magayon," meaning beautiful, perfectly describes this natural wonder. Beyond its beauty, the volcano holds centuries of history and folklore, making it a symbol of resilience and culture in the region.</p>
+          <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+    
+          <div class="destination">
+            <img src="rice.jpg" alt="Destination 3">
+            <div class="destination-content">
+              <h3>Banaue Rice Terraces</h3>
+              <p class="short-desc">Banaue Rice Terraces are the world's oldest rice terraces. The 2,000 years old terraces were carved by indigenous Filipino's ancestors.</p>
+                <p class="full-desc" style="display: none;">The crops which are planted on the terraces include rice and vegetables. Most the rice grown on the Banaue rice terraces are exported. However, the yield has significantly reduced and as such the economic activity is shifting from rice exports to tourism.</p>
+          <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const readMoreLinks = document.querySelectorAll('.read-more');
+    
+    readMoreLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            const destinationContent = link.closest('.destination-content');
+            const fullDesc = destinationContent.querySelector('.full-desc');
+            
+            if (fullDesc.style.display === 'none' || fullDesc.style.display === '') {
+                fullDesc.style.display = 'block';
+                link.textContent = 'Read Less';
+            } else {
+                fullDesc.style.display = 'none';
+                link.textContent = 'Read More';  
+            }
+        });
+    });
+});
+    </script>
+      
+    <footer class="footer">
+        <div class="inner-footer">
+            <div class="social-links">
+            <ul>
+                <li class="social-items"><a href="https://web.facebook.com/kryztinealliah.empleo"><i class='bx bxl-facebook-circle'></i></a></li>
+                <li class="social-items"><a href="https://www.instagram.com/kryztine_empleo/"><i class='bx bxl-instagram-alt'></i></a></li>
+            </ul>
+            </div>
+        </div>
+    
+        <div class="outer-footer">
+            Copyright &copy; Kryztine Alliah Empleo. All Rights Reserved
+        </div>
+    </footer> 
+</body>
+</html>
